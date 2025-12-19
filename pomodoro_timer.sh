@@ -17,6 +17,19 @@ fi
 # --- helpers ---
 have() { command -v "$1" >/dev/null 2>&1; }
 
+display_logo() {
+  cat <<'LOGO'
+
+██████╗  █████╗ ███████╗██╗  ██╗    
+██╔══██╗██╔══██╗██╔════╝██║  ██║    
+██████╔╝███████║███████╗███████║    
+██╔══██╗██╔══██║╚════██║██╔══██║    
+██████╔╝██║  ██║███████║██║  ██║    
+╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝                                   
+                  Pomodoro Timer
+LOGO
+}
+
 notify() {
   local title="$1"
   local msg="$2"
@@ -67,6 +80,7 @@ countdown() {
 
 trap 'printf "\nStopped.\n"; exit 0' INT TERM
 
+display_logo
 cycle=1
 while true; do
   notify "Pomodoro #$cycle" "Work started: $(fmt_time "$WORK_SEC")"
@@ -81,4 +95,3 @@ while true; do
   beep
   cycle=$((cycle + 1))
 done
-
