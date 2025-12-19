@@ -1,4 +1,6 @@
-# pomodoro-cli
+# Bash-Pomodoro-Timer
+
+<img width="1075" height="651" alt="image" src="https://github.com/user-attachments/assets/ab43a68a-c917-443f-9bdf-c008f051940b" />
 
 A simple Pomodoro timer written in Bash.
 
